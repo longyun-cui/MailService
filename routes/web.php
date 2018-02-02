@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::match(['get','post'], '/email/send','MailController@send');
+//Route::match(['get','post'], '/email/test','MailController@test');
