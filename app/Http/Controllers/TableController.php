@@ -23,10 +23,10 @@ class TableController extends Controller
         $post_data['user_id'] = 1;
         $post_data['code'] = 1;
         $post_data['target'] = 'longyun-cui@163.com';
-        dd($post_data);
+//        dd($post_data);
 
-//        $flag = $this->repo->send_email_activation($post_data);
-//        dd($flag);
+        $flag = $this->repo->send_email_activation($post_data);
+        dd($flag);
     }
 
     public function send_email_activation()
