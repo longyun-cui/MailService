@@ -9,6 +9,7 @@ use Response, Auth, Validator, DB, Excepiton, Config;
 class TableRepository {
 
     private $host;
+    private $port;
     private $username;
     private $password;
 

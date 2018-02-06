@@ -20,6 +20,7 @@ class TableController extends Controller
 
     public function test()
     {
+        $post_data['host'] = 'http://tables.com';
         $post_data['user_id'] = 1;
         $post_data['code'] = 1;
         $post_data['target'] = 'longyun-cui@163.com';
