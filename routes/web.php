@@ -16,4 +16,28 @@ Route::get('/', function () {
 });
 
 Route::match(['get','post'], '/email/send','MailController@send');
-//Route::match(['get','post'], '/email/test','MailController@test');
+
+
+
+/*
+ * softorg.cn
+ */
+Route::group(['prefix' => 'softorg'], function () {
+
+    $controller = "SoftorgController";
+
+    Route::match(['get','post'], 'change_captcha', $controller.'@change_captcha');
+});
+
+
+
+/*
+ * Tables&Charts
+ */
+Route::group(['prefix' => 'table'], function () {
+
+    $controller = "TableController";
+
+    Route::match(['get','post'], 'test', $controller.'@test');
+    Route::match(['get','post'], 'email/activation', $controller.'@send_email_activation');
+});
