@@ -41,7 +41,7 @@ class TableRepository {
             $message->to($post_data['target']); // 收件人的邮箱地址
             $message->subject('激活邮箱'); // 邮件主题
         });
-//        dd(count(Mail::failures()));
+
         return Mail::failures();
     }
 
