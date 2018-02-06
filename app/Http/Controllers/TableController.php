@@ -27,7 +27,7 @@ class TableController extends Controller
 //        dd($post_data);
 
         $flag = $this->repo->send_email_activation($post_data);
-        dd($flag);
+        dd(count($flag));
     }
 
     public function send_email_activation()
