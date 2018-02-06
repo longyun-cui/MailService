@@ -26,7 +26,9 @@ Route::group(['prefix' => 'softorg'], function () {
 
     $controller = "SoftorgController";
 
-    Route::match(['get','post'], 'change_captcha', $controller.'@change_captcha');
+//    Route::match(['get','post'], 'test', $controller.'@test');
+    Route::match(['get','post'], 'email/activation', $controller.'@send_email_activation');
+    Route::match(['get','post'], 'activity/apply/activation', $controller.'@send_activity_apply_activation');
 });
 
 

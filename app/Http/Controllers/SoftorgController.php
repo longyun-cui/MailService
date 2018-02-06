@@ -9,7 +9,7 @@ use App\Repositories\Mails\SoftorgRepository;
 use Mail;
 use Exception;
 
-class MailController extends Controller
+class SoftorgController extends Controller
 {
     //
     private $repo;
@@ -19,34 +19,37 @@ class MailController extends Controller
     }
 
 
-    public function send()
+    public function send_email_activation()
     {
         $post_data = request()->all();
-        $sort = $post_data["sort"];
-        if($sort == "admin_activation")
+
+        $flag = $this->repo->send_admin_activation($post_data);
+        if(count($flag) >= 1)
         {
-            $flag = $this->repo->send_admin_activation_email($post_data);
+            $flag = $this->repo->send_admin_activation($post_data);
             if(count($flag) >= 1)
             {
-                $flag = $this->repo->send_admin_activation_email($post_data);
-                if(count($flag) >= 1)
-                {
-                    $flag = $this->repo->send_admin_activation_email($post_data);
-                    if(count($flag) >= 1) return response_fail();
-                }
+                $flag = $this->repo->send_admin_activation($post_data);
+                if(count($flag) >= 1) return response_fail();
             }
         }
-        else if($sort == "activity_apply")
+
+        return response_success([],"发送成功");
+    }
+
+
+    public function send_activity_apply_activation()
+    {
+        $post_data = request()->all();
+
+        $flag = $this->repo->send_activity_apply_activation($post_data);
+        if(count($flag) >= 1)
         {
-            $flag = $this->repo->send_activity_apply_email($post_data);
+            $flag = $this->repo->send_activity_apply_activation($post_data);
             if(count($flag) >= 1)
             {
-                $flag = $this->repo->send_activity_apply_email($post_data);
-                if(count($flag) >= 1)
-                {
-                    $flag = $this->repo->send_activity_apply_email($post_data);
-                    if(count($flag) >= 1) return response_fail();
-                }
+                $flag = $this->repo->send_activity_apply_activation($post_data);
+                if(count($flag) >= 1) return response_fail();
             }
         }
 
