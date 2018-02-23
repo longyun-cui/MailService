@@ -45,6 +45,19 @@ Route::group(['prefix' => 'course'], function () {
 });
 
 
+/*
+ * Products
+ */
+Route::group(['prefix' => 'product'], function () {
+
+    $controller = "ProductController";
+
+//    Route::match(['get','post'], 'test', $controller.'@test');
+    Route::match(['get','post'], 'user/email/activation', $controller.'@send_user_email_activation');
+    Route::match(['get','post'], 'admin/email/activation', $controller.'@send_admin_email_activation');
+});
+
+
 
 /*
  * Tables & Charts
