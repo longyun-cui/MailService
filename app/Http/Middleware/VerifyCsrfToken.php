@@ -15,6 +15,7 @@ class VerifyCsrfToken extends Middleware
         //
         'softorg/*',
         'table/*',
+        'line/*',
         'course/*',
         'topic/*'
     ];

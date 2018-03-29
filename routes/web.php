@@ -34,6 +34,19 @@ Route::group(['prefix' => 'softorg'], function () {
 
 
 /*
+ * Lines
+ */
+Route::group(['prefix' => 'line'], function () {
+
+    $controller = "LineController";
+
+//    Route::match(['get','post'], 'test', $controller.'@test');
+    Route::match(['get','post'], 'email/activation', $controller.'@send_email_activation');
+});
+
+
+
+/*
  * Courses
  */
 Route::group(['prefix' => 'course'], function () {
