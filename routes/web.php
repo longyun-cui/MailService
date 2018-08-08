@@ -95,3 +95,16 @@ Route::group(['prefix' => 'table'], function () {
 //    Route::match(['get','post'], 'test', $controller.'@test');
     Route::match(['get','post'], 'email/activation', $controller.'@send_email_activation');
 });
+
+
+
+/*
+ * Tables & Charts
+ */
+Route::group(['prefix' => 'keron'], function () {
+
+    $controller = "KeronController";
+
+//    Route::match(['get','post'], 'test', $controller.'@test');
+    Route::match(['get','post'], 'email/quote', $controller.'@send_email_quote');
+});
