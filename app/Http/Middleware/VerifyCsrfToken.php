@@ -17,6 +17,7 @@ class VerifyCsrfToken extends Middleware
         'table/*',
         'line/*',
         'course/*',
-        'topic/*'
+        'topic/*',
+        'keron/*'
     ];
 }
