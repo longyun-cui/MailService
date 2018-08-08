@@ -37,7 +37,7 @@ class KeronRepository {
 
             $message->from($this->username, '管理员'); // 发件人（你自己的邮箱和名称）
             $message->to($post_data['target']); // 收件人的邮箱地址
-            $message->subject('资讯提醒'); // 邮件主题
+            $message->subject('咨询报价'); // 邮件主题
         });
 
         return Mail::failures();
