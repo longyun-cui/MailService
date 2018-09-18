@@ -34,6 +34,19 @@ Route::group(['prefix' => 'softorg'], function () {
 
 
 /*
+ * softdoc.cn
+ */
+Route::group(['prefix' => 'softdoc'], function () {
+
+    $controller = "SoftdocController";
+
+//    Route::match(['get','post'], 'test', $controller.'@test');
+    Route::match(['get','post'], 'email/activation', $controller.'@send_email_activation');
+});
+
+
+
+/*
  * Lines
  */
 Route::group(['prefix' => 'line'], function () {

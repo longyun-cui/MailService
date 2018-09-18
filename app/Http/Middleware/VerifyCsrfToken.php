@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         //
         'softorg/*',
+        'softdoc/*',
         'table/*',
         'line/*',
         'course/*',
